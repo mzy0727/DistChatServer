@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/testspdlog.dir/testspdlog.cpp.o  -o ../bin/testspdlog 

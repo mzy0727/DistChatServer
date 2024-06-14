@@ -1,0 +1,3 @@
+/home/mzy/Code/ChatServer/test/build/CMakeFiles/rebuild_cache.dir
+/home/mzy/Code/ChatServer/test/build/CMakeFiles/edit_cache.dir
+/home/mzy/Code/ChatServer/test/build/CMakeFiles/testspdlog.dir
