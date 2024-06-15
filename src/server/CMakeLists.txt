@@ -3,8 +3,9 @@ aux_source_directory(. SRC_LIST)
 aux_source_directory(./db DB_LIST)
 aux_source_directory(./model MODEL_LIST)
 aux_source_directory(./redis REDIS_LIST)
+aux_source_directory(./protobuf PROTOBUF_LIST)
 # 指定生成的可执行文件
-add_executable(ChatServer ${SRC_LIST} ${DB_LIST} ${MODEL_LIST} ${REDIS_LIST})
+add_executable(ChatServer ${SRC_LIST} ${DB_LIST} ${MODEL_LIST} ${REDIS_LIST} ${PROTOBUF_LIST})
 # 指定可执行文件链接时需要依赖的库文件
 # target_link_libraries(ChatServer tiny_network  mysqlclient  pthread)
 
@@ -13,4 +14,4 @@ add_executable(ChatServer ${SRC_LIST} ${DB_LIST} ${MODEL_LIST} ${REDIS_LIST})
 include_directories(/usr/include/mprpc)
 include_directories(/usr/local/include)  # 可能需要包含muduo的头文件
 
-target_link_libraries(ChatServer mprpc protobuf zookeeper_mt   muduo_net muduo_base  mysqlclient hiredis pthread)
+target_link_libraries(ChatServer mprpc protobuf zookeeper_mt  pthread  muduo_net muduo_base  mysqlclient hiredis )

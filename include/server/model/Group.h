@@ -1,6 +1,7 @@
 #include "GroupUser.h"
 #include <string>
 #include <vector>
+#include "User.h"
 using namespace std;
 
 // User表的ORM类
@@ -21,12 +22,12 @@ public:
     int getId() { return this->id; }
     string getName() { return this->name; }
     string getDesc() { return this->desc; }
-    vector<GroupUser> &getUsers() { return this->users; }
+    vector<User> &getUsers() { return this->users; }
 
 private:
     int id;
     string name;
     string desc;
-    vector<GroupUser> users;
+    vector<User> users;
 };
 

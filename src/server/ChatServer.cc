@@ -30,7 +30,7 @@ void ChatServer::onConnection(const TcpConnectionPtr& conn)
 {
     if (conn->connected())
     {
-        spdlog::info("Connection UP : {:s} ", conn->peerAddress().toIpPort().c_str());
+       // spdlog::info("Connection UP : {:s} ", conn->peerAddress().toIpPort().c_str());
         LOG_INFO << "Connection UP : " << conn->peerAddress().toIpPort().c_str();
     }
     else
@@ -46,16 +46,22 @@ void ChatServer::onConnection(const TcpConnectionPtr& conn)
 void ChatServer::onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)
 {
     std::string msg = buf->retrieveAllAsString();
+    cout<<"msg:"<<msg<<endl;
+    fixbug::protobuffer pbuf;
+   
     // LOG_INFO << conn->name() << " echo " << msg.size() << " bytes, "
     //          << "data received at " << time.toFormattedString();
     // conn->send(msg);
 
     // 数据的反序列化
-    json js = json::parse(msg);
+    pbuf.ParseFromString(msg);
+    uint32_t msgtype = pbuf.protobuftype();
+    // 根据header_size读取数据头的原始字符流，反序列化数据，得到rpc请求的详细信息
+    msg = pbuf.protobufstr();
     // 达到的目的：完全解耦网络模块代码和业务模块的代码
     // 通过js["msgid"]获取=》业务handler=》conn js time
-    auto msgHandler = ChatService::instance()->getHandler(js["msgid"].get<int>());
+    auto msgHandler = ChatService::instance()->getHandler(msgtype);
     // 回调消息对应绑定好的事件处理器，来执行相应的业务处理
-    msgHandler(conn,js,time);
+  //  msgHandler(conn,msg,time);
 
 }
