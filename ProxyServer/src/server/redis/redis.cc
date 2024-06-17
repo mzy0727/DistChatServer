@@ -19,7 +19,7 @@ Redis::~Redis()
         redisFree(_subcribe_context);
     }
 }
-
+ 
 bool Redis::connect()
 {
     // 负责publish发布消息的上下文连接
