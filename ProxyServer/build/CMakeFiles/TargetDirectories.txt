@@ -1,0 +1,10 @@
+/home/mzy/Code/DistributedClusterChatServer/build/CMakeFiles/rebuild_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/CMakeFiles/edit_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/CMakeFiles/rebuild_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/CMakeFiles/edit_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/server/CMakeFiles/rebuild_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/server/CMakeFiles/edit_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/server/CMakeFiles/ProxyServer.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/client/CMakeFiles/rebuild_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/client/CMakeFiles/edit_cache.dir
+/home/mzy/Code/DistributedClusterChatServer/build/src/client/CMakeFiles/ChatClient.dir
