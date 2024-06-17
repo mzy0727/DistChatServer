@@ -42,7 +42,7 @@ void ChatServer::onConnection(const TcpConnectionPtr& conn)
         conn->shutdown();
     }
 }
-
+ 
 void ChatServer::onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)
 {
     std::string msg = buf->retrieveAllAsString();
