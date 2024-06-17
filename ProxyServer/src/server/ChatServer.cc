@@ -48,7 +48,7 @@ void ChatServer::onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp 
     std::string msg = buf->retrieveAllAsString();
     cout<<"msg:"<<msg<<endl;
     fixbug::ProxyRequest request;
-    
+     
     
    
     // LOG_INFO << conn->name() << " echo " << msg.size() << " bytes, "
